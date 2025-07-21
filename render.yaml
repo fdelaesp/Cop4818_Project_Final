@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: cop4813-final-project
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn run:app"
+    plan: free
