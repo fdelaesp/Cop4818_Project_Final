@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ indicator.name }}</h2>
+<p>{{ indicator.description }}</p>
+<div class="card mt-3">
+  <div class="card-body">
+    <strong>Latest value:</strong>
+    {{ indicator.latest_val if indicator.latest_val is not none else "—" }}
+    {% if indicator.updated_at %}
+      <span class="text-muted">(updated {{ indicator.updated_at.date() }})</span>
+    {% endif %}
+  </div>
+</div>
+<a href="{{ url_for('main.index') }}" class="btn btn-link mt-3">Back</a>
+{% endblock %}

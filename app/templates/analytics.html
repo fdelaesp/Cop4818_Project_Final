@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Usage Analytics (Top 10)</h2>
+<table class="table table-striped mt-3">
+  <thead><tr><th>Indicator</th><th>Queries</th></tr></thead>
+  <tbody>
+    {% for ind,cnt in data %}
+      <tr><td>{{ ind }}</td><td>{{ cnt }}</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

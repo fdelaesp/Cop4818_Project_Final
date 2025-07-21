@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mb-4">Macro‑Financial Indicator Explorer</h1>
+<form method="post" class="row g-3">
+  <div class="col-md-8">
+    <select name="indicator" class="form-select" required>
+      <option value="" disabled selected>Choose an indicator…</option>
+      {% for ind in indicators %}
+        <option value="{{ ind.id }}">{{ ind.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="col-md-4 d-grid">
+    <button class="btn btn-primary">View</button>
+  </div>
+</form>
+{% endblock %}
